@@ -27,6 +27,7 @@
     "pino-pretty": "^7.6.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5",
+    "supertest": "^6.2.4",
     "typeorm": "^0.3.6",
     "zod": "^3.16.1"
   },
