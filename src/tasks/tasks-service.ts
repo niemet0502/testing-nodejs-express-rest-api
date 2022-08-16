@@ -1,5 +1,5 @@
 import Task from "./tasks-entities";
-import taskRepository from "./tasks-repositories";
+import taskRepository, { getTaskDetail } from "./tasks-repositories";
 
 export const create = (body: Request) => {
   const { name, description, isDueDate, date } = body as any;
@@ -30,10 +30,7 @@ export const findTasksByUser = async (id: number) => {
 };
 
 export const findTaskById = async (id: number) => {
-  const task = await taskRepository.findOne({
-    where: { id: id },
-    relations: { user: true },
-  });
+  const task = await getTaskDetail(id);
 
   return task;
 };
